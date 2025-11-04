@@ -4,119 +4,76 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BomBrrtt — Login</title>
-  <meta name="theme-color" content="#0f0f10" />
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- Styles -->
+  <!-- IMPORTANT: exact filename, root path -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Supabase UMD (required by login.js) -->
-  <script src="https://unpkg.com/@supabase/supabase-js@2.46.1/dist/umd/supabase.js"></script>
-
-  <!-- Your auth logic (edited earlier) -->
-  <script defer src="script.js"></script>
 </head>
 <body>
+
+  <!-- Background video (optional: replace video/bg.mp4 or remove entirely) -->
   <video id="background-video" autoplay loop muted playsinline>
-    <source src="video/bg.mp4" type="video/mp4" />
+    <source src="video/bg.mp4" type="video/mp4">
   </video>
 
+  <!-- Top buttons -->
   <button id="mute-toggle" aria-label="Toggle Mute">
-    <i class="fas fa-volume-mute" aria-hidden="true"></i>
+    <i class="fas fa-volume-mute"></i>
   </button>
-
   <a href="https://www.facebook.com/share/1DBYtcrLzN/" id="help-button" target="_blank" rel="noopener">
-    <i class="fas fa-question-circle" aria-hidden="true"></i> Help
+    <i class="fas fa-question-circle"></i> Help
   </a>
 
+  <!-- Login card -->
   <div class="wrap">
-    <div class="login-box" role="dialog" aria-labelledby="login-title">
-      <h2 id="login-title">Sign In</h2>
+    <div class="login-box" role="region" aria-labelledby="loginTitle">
+      <h2 id="loginTitle">Sign In</h2>
 
-      <form id="loginForm" autocomplete="on">
-        <label for="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          inputmode="text"
-          placeholder="@username"
-          spellcheck="false"
-          autocomplete="username"
-          autocapitalize="none"
-          required
-        />
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" placeholder="@username" autocomplete="username" />
 
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Password"
-          autocomplete="current-password"
-          required
-        />
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="••••••••" autocomplete="current-password" />
 
-        <button id="loginSubmitBtn" type="submit">Login</button>
-      </form>
+      <button id="loginSubmitBtn" type="button">Login</button>
 
       <p class="signup-text">
-        No account?
-        <a href="#" id="openSignup">Sign Up</a>
+        No account? <a href="#" id="openSignUp">Sign Up</a>
       </p>
-      <p class="hint">
-        Tip: we use <code>@username</code> and map it to <code>username@placeholder.local</code> internally.
-      </p>
+      <p class="hint">Tip: we use <code>@username</code> and map it to <code>username@placeholder.local</code> internally.</p>
     </div>
   </div>
 
-  <!-- Sign Up Modal -->
+  <!-- Sign Up modal -->
   <div class="modal-backdrop" id="signupModal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-labelledby="signup-title">
+    <div class="modal" role="dialog" aria-labelledby="signupTitle" aria-modal="true">
       <header>
-        <button class="back-btn" id="closeSignup" aria-label="Close sign up">
-          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <h3 id="signupTitle">Create Account</h3>
+        <button class="back-btn" id="closeSignUp" aria-label="Close Sign Up">
+          <i class="fas fa-arrow-left"></i>
         </button>
-        <h3 id="signup-title">Create Account</h3>
-        <div style="width:46px;height:46px;"></div>
       </header>
-
       <div class="modal-inner">
-        <form id="signupForm" autocomplete="on">
-          <label for="su_username">Username</label>
-          <input
-            type="text"
-            id="su_username"
-            placeholder="@choose-username"
-            spellcheck="false"
-            autocomplete="username"
-            autocapitalize="none"
-            required
-          />
+        <label for="su_username">Username</label>
+        <input id="su_username" type="text" placeholder="@username" autocomplete="username">
 
-          <label for="su_password">Password</label>
-          <input
-            type="password"
-            id="su_password"
-            placeholder="Password"
-            autocomplete="new-password"
-            required
-          />
+        <label for="su_password">Password</label>
+        <input id="su_password" type="password" placeholder="••••••••" autocomplete="new-password">
 
-          <label for="su_confirm">Confirm Password</label>
-          <input
-            type="password"
-            id="su_confirm"
-            placeholder="Confirm password"
-            autocomplete="new-password"
-            required
-          />
+        <label for="su_confirm">Confirm Password</label>
+        <input id="su_confirm" type="password" placeholder="••••••••" autocomplete="new-password">
 
-          <button class="btn-primary" type="submit">Sign Up</button>
-        </form>
+        <div style="margin-top:14px">
+          <button class="btn-primary" id="createAccountBtn" type="button">Sign Up</button>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- IMPORTANT: exact filename, root path -->
+  <script src="script.js"></script>
 </body>
 </html>
