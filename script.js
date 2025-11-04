@@ -1,6 +1,6 @@
 /* ================== SUPABASE CONFIG (CHANGE THESE) ================== */
-const SB_URL   = "https://kslktaqlcwuavjiojafe.supabase.co";     // ← replace
-const SB_ANON  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzbGt0YXFsY3d1YXZqaW9qYWZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNTE2MzQsImV4cCI6MjA3NzgyNzYzNH0.MM5dMZRvV-wgYgpygdYxHN54xmvUfEcz64LzlbqShEM";                    // ← replace
+const SB_URL   = "https://thbzxrgapkvwmakmbfuh.supabase.co";     // ← replace
+const SB_ANON  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRoYnp4cmdhcGt2d21ha21iZnVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyMzc1NjEsImV4cCI6MjA3NzgxMzU2MX0.EGhTkQkbdNuH872usAoPktITVkDUeYVSPdRPOx49Ng0";                    // ← replace
 const supa = supabase.createClient(SB_URL, SB_ANON);
 
 /* Redirects (keep your filenames) */
